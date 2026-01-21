@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Job Title Normalization and Classification Schema",
+  "description": "Schema defining the normalized job title, job level, and job function for Marketo enrichment via OpenAI",
+  "type": "object",
+  "required": [
+    "job_title_normalized",
+    "job_level",
+    "job_function"
+  ],
+  "properties": {
+    "job_title_normalized": {
+      "type": "string",
+      "description": "Standardized job title derived from the original job title"
+    },
+    "job_level": {
+      "type": "string",
+      "description": "Seniority level inferred from the normalized job title",
+      "enum": [
+        "Entry Level",
+        "Contributor",
+        "Manager",
+        "Director",
+        "VP / Head",
+        "C-Level"
+      ]
+    },
+    "job_function": {
+      "type": "string",
+      "description": "Primary functional area inferred from the normalized job title",
+      "enum": [
+        "Data & Analytics",
+        "Engineering",
+        "Data Infrastructure & Architecture",
+        "Information Technology",
+        "Information Security & GRC",
+        "Digital Transformation & Enterprise Systems",
+        "Product Management",
+        "Marketing",
+        "Finance",
+        "Human Resources",
+        "Operations",
+        "Sales",
+        "Legal & Compliance",
+        "Executive Leadership & Corporate Strategy",
+        "Other",
+        "Non-Target"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
